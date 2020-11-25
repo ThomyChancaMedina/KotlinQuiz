@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="1000"
+        motion:motionInterpolator="bounce">
+
+    </Transition>
+
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:id="@id/avatar_circle"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/speech_balloon"
+            motion:layout_constraintEnd_toEndOf="@+id/card_quiz"
+            motion:layout_constraintStart_toStartOf="@+id/icon"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.3" />
+
+        <Constraint
+            android:id="@+id/speech_balloon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/icon" />
+
+        <Constraint
+            android:id="@+id/quiz"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/speech_balloon"
+            motion:layout_constraintEnd_toEndOf="@+id/speech_balloon"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/icon"
+            motion:layout_constraintVertical_bias="0.2" />
+
+        <Constraint
+            android:id="@+id/quiz_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@+id/icon" />
+
+        <Constraint
+            android:id="@+id/icon"
+            android:layout_width="153dp"
+            android:layout_height="108dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/card_quiz"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/speech_balloon"
+            motion:layout_constraintTop_toTopOf="@+id/icon"
+            motion:layout_constraintVertical_bias="0.3" />
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@id/avatar_circle"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:rotation="360"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="1.5"
+            motion:layout_constraintStart_toStartOf="@+id/icon"
+            motion:layout_constraintTop_toTopOf="@+id/card_quiz" />
+        <Constraint
+            android:id="@+id/quiz_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintEnd_toStartOf="@+id/icon"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_editor_absoluteY="69dp" />
+
+
+    </ConstraintSet>
+
+</MotionScene>

@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Kotlin Quiz</string>
+
+    <string name="title">Cuestionario de Principios SOLID</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ingredients">Tomatos, Cheese, Lettuce,\n Chips, Tacos, Dessing</string>
+    <string name="price">₹180</string>
+    <string name="calories">200 Kcal</string>
+    <!--    <string-array name="questionArray">-->
+
+    <!--        <item>1. El Principio de segregación es lo mismo que “Interface Segregation Principle”</item>-->
+    <!--        <item>2. ¿si en una clase estoy mostrando los datos y a la vez esta misma clase trae los datos para mostrarlos en la View, estoy violando Single Responsibility Principle?</item>-->
+    <!--        <item>3. ¿El Single Responsibility principle me ayuda a que mi interfaz sea bien visto por el usuario?</item>-->
+    <!--        <item>4. ¿Es obligatorio que mi clase tenga muchos métodos públicos ?</item>-->
+    <!--        <item>5. ¿Si una clase tiene muchos import, es que estoy haciendo un buen trabajo en cada una de mis otras clases y no estoy haciendo trabajo de mas?</item>-->
+    <!--        <item>6. ¿si no soy capaz de escribir mi test unitarios tengo que mirar mis interfaces como guiá?</item>-->
+    <!--        <item>7. ¿Mi clase tiene muchas lineas? Es un indicio de que no estoy organizando mi código y sera menos manejable</item>-->
+    <!--        <item>8. ¿Por reglas de Open Close el extender el comportamiento de mi App sin modificar mi código anterior?, estamos violación de esta regla</item>-->
+    <!--        <item>9. ¿Crear clases polimórficas es importante, ya que esta nos ayuda acoplar nuevas funcionalidades sin necesidad de modificar otras clases o métodos?</item>-->
+    <!--        <item>10. ¿El Polimorfismo quiere decir que una clase padre es única y solo éste puede ser insustituible en el-->
+    <!--            tiempo y que sus hijas comparten o puede adoptar la forma del padre?</item>-->
+    <!--        <item>11. ¿La clase padre es algo que se puede cambiar?</item>-->
+    <!--        <item>12. La frase usar herencia es hipotecar su software, Quiere decir que todo funciona bien al principio, pero con el tiempo te vas dando cuenta que ya no funciona bien la clase como al principio cuando la creaste por falta de más funcionalidades que necesitas crear</item>-->
+    <!--        <item>13. Las herencias son lo mismo que las composiciones</item>-->
+    <!--        <item>14. La composición es aquella que tiene  instancia de una clase que a su ves contiene instancia de otras clases implementando  funciones necesarias</item>-->
+    <!--        <item>15. En la composición, delegamos responsabilidades en colaboradores designados para ello</item>-->
+    <!--        <item>16. Las herencias se suelen adaptarse a cambias, evitando así el llamado “Spaguetti code”</item>-->
+    <!--        <item>17. Se dice que al usar composiciones podemos elegir si vamos a tener un 0, 1 o N elementos con los que interactuar al mismo tipo </item>-->
+    <!--    </string-array>-->
+
+    <string-array name="Answers">
+        <item>yes</item>
+        <item>yes</item>
+        <item>no</item>
+        <item>no</item>
+        <item>no</item>
+        <item>yes</item>
+        <item>yes</item>
+        <item>no</item>
+        <item>yes</item>
+        <item>no</item>
+        <item>yes</item>
+        <item>yes</item>
+        <item>no</item>
+        <item>yes</item>
+        <item>yes</item>
+        <item>no</item>
+        <item>yes</item>
+    </string-array>
+
+
+    <string name="btn_confirmation">Check</string>
+    <string name="todo">TODO</string>
+    <string name="dish_name">Question</string>
+    <string name="quiz_num">10/0</string>
+    <string name="btn_ok">ok</string>
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/motionIcon"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:applyMotionScene="true"
+    app:layoutDescription="@xml/pager_scene">
+
+    <ImageView
+        android:id="@+id/card_quiz"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/card_question"
+        android:contentDescription="@string/todo" />
+
+    <include
+        android:id="@+id/avatar_circle"
+        layout="@layout/avatar_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/quiz"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/quiz_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/answer"
+        android:textColor="@color/light"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        tools:text="@string/quiz_num" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="153dp"
+        android:layout_height="108dp"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/albert"
+        tools:layout_editor_absoluteX="129dp" />
+
+
+    <ImageView
+        android:id="@+id/speech_balloon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/combined_shape_unlimited_rate"
+        android:contentDescription="@string/todo" />
+
+    <TextView
+        android:id="@+id/quiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ask_einstein"
+        android:textAllCaps="false"
+        android:textColor="@color/black333333"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="@string/dish_name" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

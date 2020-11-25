@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="top_header_horizontal_margin">149dp</dimen>
+    <dimen name="top_header_padding_top">3dp</dimen>
+    <dimen name="top_header_padding_bottom">50dp</dimen>
+
+    <dimen name="horizontal_padding">16dp</dimen>
+    <dimen name="margin_24dp">24dp</dimen>
+    <dimen name="text_20sp">20dp</dimen>
+    <dimen name="margin_590dp">590dp</dimen>
+    <dimen name="margin_300dp">300dp</dimen>
+    <dimen name="common_padding_default">16dp</dimen>
+
+</resources>

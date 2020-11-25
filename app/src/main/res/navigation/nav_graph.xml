@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/testSolid">
+    <fragment
+        android:id="@+id/testSolid"
+        android:name="com.kotlinquiz.app.ui.testFragment.TestSolidFragment"
+        android:label="fragment_test_solid"
+        tools:layout="@layout/fragment_test_solid">
+        <argument
+            android:name="id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_testSolid_to_mainFragment"
+            app:destination="@id/mainFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.kotlinquiz.app.ui.questions.MainFragment"
+        android:label="firth_question"
+        tools:layout="@layout/fragment_main">
+        <argument
+            android:name="id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_mainFragment_to_cardQuestionActivity"
+            app:destination="@id/cardQuestionActivity" />
+
+    </fragment>
+
+    <activity
+        android:id="@+id/cardQuestionActivity"
+        android:name="com.kotlinquiz.app.ui.questions.CardQuestionActivity"
+        android:label="CardQuestionActivity">
+        <argument
+            android:name="id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </activity>
+
+
+</navigation>
