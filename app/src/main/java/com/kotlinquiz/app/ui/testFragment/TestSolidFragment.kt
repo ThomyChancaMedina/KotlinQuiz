@@ -2,6 +2,7 @@ package com.kotlinquiz.app.ui.testFragment
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -80,11 +81,9 @@ class TestSolidFragment : Fragment(), TestSolidAdapter.Interaction {
     private fun compareValues(answers: List<String>, userAnswer: List<String>): Int {
         var c = 0
         answers.forEachIndexed { idx, value ->
-            if (userAnswer[idx] == value) {
-                ++c
-            }
-        }
+            c = if (userAnswer[idx] == value) ++c else c
 
+        }
 
         return 100 * c / answers.size
     }

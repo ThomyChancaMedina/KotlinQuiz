@@ -1,5 +1,6 @@
 package com.kotlinquiz.app.ui.testFragment
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.architectcoders.domain.test.TestQuestion
@@ -56,16 +57,7 @@ class TestSolidViewModel(
         _model.value = Event(Unit)
     }
 
-    fun calculateResult(): List<String> {
-        var result: List<String> = listOf()
-
-        questions.value?.forEach { question ->
-            result = result + question.answer
-
-        }
-
-        return result
-    }
+    fun calculateResult(): List<String> = questions.value!!.map { it.answer }
 
 
     override fun onCleared() {
