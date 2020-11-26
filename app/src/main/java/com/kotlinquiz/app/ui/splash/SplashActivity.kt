@@ -6,12 +6,16 @@ import android.location.LocationManager
 import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import android.view.Window
 import androidx.core.app.ActivityOptionsCompat
 import androidx.lifecycle.Observer
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback
+import com.kotlinquiz.app.NavHostActivity
 import com.kotlinquiz.app.R
+import com.kotlinquiz.app.data.storage.AvatarManager
 import com.kotlinquiz.app.databinding.ActivitySplashBinding
 import com.kotlinquiz.app.ui.avatar.AvatarActivity
 import com.kotlinquiz.app.ui.common.app
@@ -28,12 +32,15 @@ class SplashActivity : AppCompatActivity() {
 
     private lateinit var avatarAdapter: AvatarAdapter
 
+    lateinit var avatarManager: AvatarManager
+
     private lateinit var binding: ActivitySplashBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         window.requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS)
         binding = ActivitySplashBinding.inflate(layoutInflater)
 
+        avatarManager = app.avatar
 
 
         window?.let { Utils.darkenStatusBar(it, R.color.colorPrimary, false) }
@@ -57,7 +64,6 @@ class SplashActivity : AppCompatActivity() {
         viewModel.onGetAllAvatars()
 
 
-
         val a =
             "https://firebasestorage.googleapis.com/v0/b/kotlinquiz-6d189.appspot.com/o/1606993.jpg?alt=media&token=d803ca06-f88e-41e4-be65-f6ae368375ba"
 
@@ -65,9 +71,17 @@ class SplashActivity : AppCompatActivity() {
             .load(a)
             .placeholder(R.drawable.ic_loading)
             .error(R.drawable.ic_loading)
-            .into(binding.logowayo)
+            .into(binding.logo)
 
         postDelayed(10000) {
+            if (avatarManager.avatarImage.isEmpty()) {
+                binding.splashId.visibility = View.GONE
+                binding.selectionAvatar.visibility = View.VISIBLE
+
+            } else {
+                val intent = Intent(this, NavHostActivity::class.java)
+                startActivity(intent)
+            }
 
 
         }

@@ -1,6 +1,6 @@
 package com.kotlinquiz.app.ui.testFragment
 
-import android.util.Log
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.architectcoders.domain.test.TestQuestion

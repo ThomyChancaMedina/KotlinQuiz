@@ -116,7 +116,9 @@ class MainFragment : Fragment() {
                     }
 
                     override fun onPageSelected(p0: Int) {
-
+                        
+//                        timeInclude.motionTime.transitionToStart()
+//                        timeInclude.motionTime.transitionToEnd()
 
                         buttons.answerOne.text = question[p0].answers[0].answer
                         buttons.answerTwo.text = question[p0].answers[1].answer

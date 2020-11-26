@@ -41,7 +41,7 @@ class QuestionAdapter(private val context: Context, var questions: List<Question
             }
 
             container.addView(layout)
-            motionIcon.transitionToEnd()
+
 
             Glide.with(context)
                 .asBitmap()
@@ -56,8 +56,7 @@ class QuestionAdapter(private val context: Context, var questions: List<Question
 
                     override fun onLoadCleared(placeholder: Drawable?) {}
                 })
-
-
+            motionIcon.transitionToEnd()
         }
 
         return layout

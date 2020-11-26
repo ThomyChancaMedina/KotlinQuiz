@@ -35,7 +35,6 @@
         android:textAllCaps="false"
         android:textColor="@color/registration_white_color"
         android:textSize="@dimen/text_20sp"
-        app:layout_constraintBottom_toTopOf="@id/login_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

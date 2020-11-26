@@ -5,6 +5,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -57,7 +58,7 @@ inline fun <reified T : ViewModel> FragmentActivity.getViewModel(crossinline fac
     return ViewModelProvider(this, vmFactory).get()
 }
 fun postDelayed(delayMillis: Long, task: () -> Unit) {
-    Handler().postDelayed(task, delayMillis)
+    Handler(Looper.getMainLooper()).postDelayed(task, delayMillis)
 }
 fun <T : ViewDataBinding> ViewGroup.bindingInflate(
     @LayoutRes layoutRes: Int,
