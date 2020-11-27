@@ -50,7 +50,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(binding.root)
         super.onCreate(savedInstanceState)
 
-        val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+//        val locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
 
 
 
@@ -73,7 +73,7 @@ class SplashActivity : AppCompatActivity() {
             .error(R.drawable.ic_loading)
             .into(binding.logo)
 
-        postDelayed(10000) {
+        postDelayed(5000) {
             if (avatarManager.avatarImage.isEmpty()) {
                 binding.splashId.visibility = View.GONE
                 binding.selectionAvatar.visibility = View.VISIBLE

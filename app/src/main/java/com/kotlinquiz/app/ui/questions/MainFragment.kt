@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.viewpager.widget.ViewPager
 import com.architectcoders.domain.question.Question
+import com.kotlinquiz.app.R
 import com.kotlinquiz.app.databinding.FragmentMainBinding
 import com.kotlinquiz.app.ui.common.appF
 import com.kotlinquiz.app.ui.common.getViewModelF
@@ -27,13 +28,16 @@ class MainFragment : Fragment() {
 
     private lateinit var component: QuestionComponent
 
+    private var NEXT_ITEM = 1
+
+
     private val viewModel: QuestionViewModel by lazy { getViewModelF { component.questionViewModel } }
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMainBinding.inflate(inflater, container, false)
 
 
@@ -43,39 +47,51 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        countDownTimerView=binding.timeInclude.time
-
-
-        component = appF.component.plus(QuestionModule())
-
-        viewModel.question.observe(viewLifecycleOwner, Observer(::getData))
-        viewModel.onGetAllQuestions()
+        with(binding) {
+            countDownTimerView = timeInclude.time
 
 
-//        clickListeners()
+            component = appF.component.plus(QuestionModule())
 
-        countDownTimerView.startTimer(
-            timerCount = 30,
-            onCountDownTimerStarted = {
-                Log.d("Timer: ", "Started")
-            },
-            onCountDownTimerRunning = {
-                Log.d("Timer: ", "Running $it")
-            },
-            onCountDownTimerStopped = {
-                Log.d("Timer: ", "Stopped")
-            })
+            viewModel.question.observe(viewLifecycleOwner, Observer(::getData))
+            viewModel.onGetAllQuestions()
 
+
+            clickListeners()
+
+            countDownTimerView.startTimer(
+                timerCount = 30,
+                onCountDownTimerStarted = {
+                    Log.d("Timer: ", "Started")
+                },
+                onCountDownTimerRunning = {
+                    Log.d("Timer: ", "Running $it")
+                },
+                onCountDownTimerStopped = {
+
+                    buttonEnable(false)
+
+                    Log.d("Timer: ", "Stopped")
+                })
+        }
     }
 
 
-//    private fun clickListeners() {
-//        add_to_cart.setOnClickListener {
-//
-//
-//        }
-//    }
+    private fun clickListeners() {
+        with(binding) {
+            buttons.answerOne.setOnClickListener {
+
+                pager.setCurrentItem(NEXT_ITEM, true)
+                NEXT_ITEM++
+
+            }
+            buttons.answerTwo.setOnClickListener {
+
+                pager.setCurrentItem(NEXT_ITEM, true)
+                NEXT_ITEM++
+            }
+        }
+    }
 
     private fun getData(uiModel: QuestionViewModel.UiModel?) {
 
@@ -87,7 +103,6 @@ class MainFragment : Fragment() {
 
             }
         }
-
     }
 
     private fun setupPager(question: List<Question>) {
@@ -104,7 +119,7 @@ class MainFragment : Fragment() {
 
                 buttons.answerOne.text = question[0].answers[0].answer
                 buttons.answerTwo.text = question[0].answers[1].answer
-                pager.addOnPageChangeListener(timeInclude.motionTime as ViewPager.OnPageChangeListener)
+
                 pager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
                     override fun onPageScrollStateChanged(p0: Int) {
 
@@ -116,19 +131,49 @@ class MainFragment : Fragment() {
                     }
 
                     override fun onPageSelected(p0: Int) {
-                        
-//                        timeInclude.motionTime.transitionToStart()
-//                        timeInclude.motionTime.transitionToEnd()
 
+                        if (p0 >= NEXT_ITEM) {
+                            buttonEnable(true)
+                            NEXT_ITEM = p0
+                            countDownTimerView.resetTimer()
+                        } else {
+                            buttonEnable(false)
+                            timeInclude.motionTime.transitionToEnd()
+                            countDownTimerView.resetTimer()
+                            countDownTimerView.stopTimer()
+
+
+                        }
+
+                        motionAction()
                         buttons.answerOne.text = question[p0].answers[0].answer
                         buttons.answerTwo.text = question[p0].answers[1].answer
-                        countDownTimerView.resetTimer()
 
-                        buttons.motionButton.transitionToEnd()
+
+                        adapterQuiz.count
+
                     }
-
                 })
+            }
+        }
+    }
 
+    private fun motionAction() {
+        with(binding) {
+            timeInclude.motionTime.transitionToStart()
+            timeInclude.motionTime.transitionToEnd()
+            buttons.motionButton.transitionToEnd()
+        }
+    }
+
+    private fun buttonEnable(mEnable: Boolean) {
+        with(binding) {
+            if (!mEnable) {
+                buttons.answerOne.isEnabled = false
+                buttons.answerTwo.isEnabled = false
+            } else {
+                buttons.answerOne.isEnabled = true
+                buttons.answerTwo.isEnabled = true
             }
         }
     }

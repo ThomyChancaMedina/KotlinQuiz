@@ -1,7 +1,7 @@
 package com.kotlinquiz.app.data.server.model
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class TestQuestion(

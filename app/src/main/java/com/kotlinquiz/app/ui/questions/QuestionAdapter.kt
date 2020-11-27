@@ -62,17 +62,14 @@ class QuestionAdapter(private val context: Context, var questions: List<Question
         return layout
     }
 
-    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
+    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) =
         container.removeView(`object` as View)
-    }
 
-    override fun isViewFromObject(view: View, `object`: Any): Boolean {
-        return view == `object`
-    }
 
-    override fun getCount(): Int {
-        return questions.size
-    }
+    override fun isViewFromObject(view: View, `object`: Any): Boolean = view == `object`
+
+
+    override fun getCount(): Int = questions.size
 
 
 }

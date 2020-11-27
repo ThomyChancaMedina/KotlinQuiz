@@ -63,7 +63,7 @@ dependencies {
     androidTestImplementation("com.squareup.okhttp3:mockwebserver:4.9.0")
     androidTestImplementation("com.jakewharton.espresso:okhttp3-idling-resource:1.0.0")
     androidTestImplementation("androidx.test.espresso:espresso-contrib:3.3.0")
-    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.3")
+    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.9")
     androidTestImplementation("it.xabaras.android.espresso:recyclerview-child-actions:1.0")
     androidTestImplementation("com.android.support.test.espresso:espresso-contrib:3.3.0")
 
@@ -71,7 +71,7 @@ dependencies {
     testImplementation("android.arch.core:core-testing:1.1.1")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.9")
     testImplementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
-    testImplementation ("com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0")
+    testImplementation ("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
     testImplementation("junit:junit:4.13.1")
     testImplementation("org.mockito:mockito-inline:3.5.13")
 
