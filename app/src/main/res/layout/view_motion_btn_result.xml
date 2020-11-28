@@ -2,10 +2,12 @@
 <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
+    android:id="@+id/btn_motion"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:layoutDescription="@xml/motion_button_result"
     app:motionDebug="NO_DEBUG">
+
 
     <ImageView
         android:id="@+id/image"
