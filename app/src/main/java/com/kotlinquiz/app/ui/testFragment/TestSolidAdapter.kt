@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.kotlinquiz.app.R
 import com.architectcoders.domain.test.TestQuestion
-import com.kotlinquiz.app.databinding.ViewQuestionBinding
+import com.kotlinquiz.app.databinding.ViewHolderTestBinding
 import com.kotlinquiz.app.ui.common.basicDiffUtil
 import com.kotlinquiz.app.ui.common.inflate
 
@@ -21,7 +21,7 @@ class TestSolidAdapter(private val interaction: Interaction? = null) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
         ViewHolder(
-            parent.inflate(R.layout.view_question, false),
+            parent.inflate(R.layout.view_holder_test, false),
             interaction
         )
 
@@ -41,7 +41,7 @@ class TestSolidAdapter(private val interaction: Interaction? = null) :
     class ViewHolder(view: View, private val interaction: Interaction?) :
         RecyclerView.ViewHolder(view) {
 
-        private val viewBinding = ViewQuestionBinding.bind(view)
+        private val viewBinding = ViewHolderTestBinding.bind(view)
 
         fun bind(question: TestQuestion) {
             with(viewBinding) {

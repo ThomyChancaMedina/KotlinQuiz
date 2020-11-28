@@ -1,4 +1,4 @@
-package com.kotlinquiz.app.data.database.Avatar
+package com.kotlinquiz.app.data.database.avatar
 
 import androidx.room.*
 

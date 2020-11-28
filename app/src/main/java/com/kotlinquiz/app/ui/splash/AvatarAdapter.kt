@@ -14,7 +14,7 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.google.android.material.card.MaterialCardView
 import com.kotlinquiz.app.R
-import com.kotlinquiz.app.databinding.ViewListAvatarBinding
+import com.kotlinquiz.app.databinding.ViewHolderAvatarsBinding
 import com.kotlinquiz.app.ui.common.basicDiffUtil
 import com.squareup.picasso.Picasso
 
@@ -29,7 +29,7 @@ class AvatarAdapter(val context: Context, private val listener: (Avatar) -> Unit
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(
-            ViewListAvatarBinding.inflate(
+            ViewHolderAvatarsBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -48,7 +48,7 @@ class AvatarAdapter(val context: Context, private val listener: (Avatar) -> Unit
     }
 
 
-    inner class ViewHolder(private val viewBinding: ViewListAvatarBinding) :
+    inner class ViewHolder(private val viewBinding: ViewHolderAvatarsBinding) :
         RecyclerView.ViewHolder(viewBinding.root) {
 
         fun bind(avatar: Avatar) {

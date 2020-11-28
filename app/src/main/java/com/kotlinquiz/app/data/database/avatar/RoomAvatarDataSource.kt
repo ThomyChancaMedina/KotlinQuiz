@@ -1,4 +1,4 @@
-package com.kotlinquiz.app.data.database.Avatar
+package com.kotlinquiz.app.data.database.avatar
 
 import com.architectcoders.data.AvatarSource.AvatarLocalSource
 import com.architectcoders.domain.avatar.Avatar

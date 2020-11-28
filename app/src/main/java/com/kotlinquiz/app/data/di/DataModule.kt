@@ -8,7 +8,6 @@ import com.architectcoders.data.source.LocalDataSource
 import com.architectcoders.data.source.RemoteDataSource
 import com.architectcoders.data.testSource.TestDataSource
 import com.architectcoders.data.testSource.TestLocalSource
-import com.kotlinquiz.app.data.database.Avatar.RoomAvatarDataSource
 import dagger.Module
 import dagger.Provides
 

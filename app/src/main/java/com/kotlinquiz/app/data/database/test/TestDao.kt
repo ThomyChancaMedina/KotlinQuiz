@@ -1,4 +1,4 @@
-package com.kotlinquiz.app.data.database.Test
+package com.kotlinquiz.app.data.database.test
 
 import androidx.room.*
 

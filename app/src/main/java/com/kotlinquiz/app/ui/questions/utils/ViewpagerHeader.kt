@@ -21,7 +21,7 @@ class ViewpagerHeader @JvmOverloads constructor(
             positionOffset: Float,
             positionOffsetPixels: Int
     ) {
-        progress = (position + positionOffset) / 2
+        progress = (position + positionOffset)
     }
 
     override fun onPageSelected(position: Int) {

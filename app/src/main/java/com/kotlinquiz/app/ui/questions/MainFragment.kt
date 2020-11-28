@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.viewpager.widget.ViewPager
 import com.architectcoders.domain.question.Question
-import com.kotlinquiz.app.R
 import com.kotlinquiz.app.databinding.FragmentMainBinding
 import com.kotlinquiz.app.ui.common.appF
 import com.kotlinquiz.app.ui.common.getViewModelF
@@ -28,7 +27,7 @@ class MainFragment : Fragment() {
 
     private lateinit var component: QuestionComponent
 
-    private var NEXT_ITEM = 1
+    private var NEXT_ITEM = 0
 
 
     private val viewModel: QuestionViewModel by lazy { getViewModelF { component.questionViewModel } }
@@ -80,15 +79,15 @@ class MainFragment : Fragment() {
     private fun clickListeners() {
         with(binding) {
             buttons.answerOne.setOnClickListener {
-
-                pager.setCurrentItem(NEXT_ITEM, true)
                 NEXT_ITEM++
+                pager.setCurrentItem(NEXT_ITEM, true)
+
 
             }
             buttons.answerTwo.setOnClickListener {
-
-                pager.setCurrentItem(NEXT_ITEM, true)
                 NEXT_ITEM++
+                pager.setCurrentItem(NEXT_ITEM, true)
+
             }
         }
     }
@@ -120,6 +119,7 @@ class MainFragment : Fragment() {
                 buttons.answerOne.text = question[0].answers[0].answer
                 buttons.answerTwo.text = question[0].answers[1].answer
 
+//                pager.addOnPageChangeListener(timeInclude.motionTime as ViewPager.OnPageChangeListener)
                 pager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
                     override fun onPageScrollStateChanged(p0: Int) {
 
@@ -149,9 +149,10 @@ class MainFragment : Fragment() {
                         buttons.answerOne.text = question[p0].answers[0].answer
                         buttons.answerTwo.text = question[p0].answers[1].answer
 
+                        if (p0 == adapterQuiz.count) {
+                            Log.d("TAG", "onPageSelected: thomy:: " + adapterQuiz.count)
 
-                        adapterQuiz.count
-
+                        }
                     }
                 })
             }

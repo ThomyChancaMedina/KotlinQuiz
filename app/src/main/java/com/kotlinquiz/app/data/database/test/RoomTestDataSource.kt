@@ -1,4 +1,4 @@
-package com.kotlinquiz.app.data.database.Test
+package com.kotlinquiz.app.data.database.test
 
 import com.architectcoders.data.testSource.TestLocalSource
 import com.architectcoders.domain.test.TestQuestion

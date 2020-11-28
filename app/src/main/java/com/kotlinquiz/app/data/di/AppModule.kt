@@ -7,9 +7,9 @@ import com.architectcoders.data.source.LocalDataSource
 import com.architectcoders.data.source.RemoteDataSource
 import com.architectcoders.data.testSource.TestDataSource
 import com.architectcoders.data.testSource.TestLocalSource
-import com.kotlinquiz.app.data.database.Avatar.RoomAvatarDataSource
+import com.kotlinquiz.app.data.database.avatar.RoomAvatarDataSource
 import com.kotlinquiz.app.data.database.ProjectDatabase
-import com.kotlinquiz.app.data.database.Test.RoomTestDataSource
+import com.kotlinquiz.app.data.database.test.RoomTestDataSource
 import com.kotlinquiz.app.data.database.question.RoomDataSource
 import com.kotlinquiz.app.data.server.QuestionDbDataSource
 import com.kotlinquiz.app.data.server.TheQuestionDb

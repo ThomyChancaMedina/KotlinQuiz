@@ -7,16 +7,14 @@ import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.palette.graphics.Palette
 import androidx.viewpager.widget.PagerAdapter
 import com.architectcoders.domain.question.Question
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 import com.kotlinquiz.app.R
-import com.kotlinquiz.app.databinding.QuestionViewBinding
+import com.kotlinquiz.app.databinding.ViewHolderQuestionBinding
 import com.kotlinquiz.app.ui.common.app
-import com.squareup.picasso.Picasso
 
 
 class QuestionAdapter(private val context: Context, var questions: List<Question>) :
@@ -28,9 +26,9 @@ class QuestionAdapter(private val context: Context, var questions: List<Question
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
 
         val itemQuiz = questions[position]
-        val layout = LayoutInflater.from(context).inflate(R.layout.question_view, container, false)
+        val layout = LayoutInflater.from(context).inflate(R.layout.view_holder_question, container, false)
 
-        val viewBinding = QuestionViewBinding.bind(layout)
+        val viewBinding = ViewHolderQuestionBinding.bind(layout)
 
         with(viewBinding) {
             layout.apply {

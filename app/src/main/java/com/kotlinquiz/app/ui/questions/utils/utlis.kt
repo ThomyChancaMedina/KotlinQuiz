@@ -5,7 +5,7 @@ import androidx.core.content.ContextCompat
 import android.view.Window
 
 object Utils {
-    // The public static function which can be called from other classes
+
     fun darkenStatusBar(app: Window, color: Int, dark: Boolean?) {
         if (dark != null) {
             if (dark) {
