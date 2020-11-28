@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Transition
-        app:constraintSetStart="@+id/start"
         app:constraintSetEnd="@+id/end"
-        app:motionInterpolator="easeInOut"
-        app:duration="5200">
+        app:constraintSetStart="@+id/start"
+        app:duration="5200"
+        app:motionInterpolator="easeInOut">
         <KeyFrameSet>
             <KeyCycle
                 app:motionTarget="@+id/image"
@@ -38,8 +38,9 @@
                 app:waveShape="sin"
                 app:waveOffset="0"/>
         </KeyFrameSet>
-        <OnClick app:targetId="@+id/image"
-            app:clickAction="toggle"/>
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@+id/image" />
     </Transition>
 
     <ConstraintSet android:id="@+id/start">
@@ -52,22 +53,8 @@
             app:layout_constraintHorizontal_bias="0.76"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.45"/>
-        <Constraint
-            app:layout_editor_absoluteY="623dp"
-            app:layout_editor_absoluteX="187dp"
-            android:id="@+id/indicator2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-        <Constraint
-            app:layout_editor_absoluteY="615dp"
-            android:layout_height="8dp"
-            app:layout_editor_absoluteX="86dp"
-            android:layout_width="36dp"
-            android:id="@+id/indicator1"
-            app:layout_constraintBottom_toTopOf="@+id/guideButton" />
-        <Constraint android:id="@+id/barrier" />
+            app:layout_constraintVertical_bias="0.45" />
+
 
     </ConstraintSet>
 
@@ -81,6 +68,6 @@
             app:layout_constraintHorizontal_bias="0.76"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.45"/>
+            app:layout_constraintVertical_bias="0.45" />
     </ConstraintSet>
 </MotionScene>
