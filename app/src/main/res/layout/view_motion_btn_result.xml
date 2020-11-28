@@ -9,9 +9,8 @@
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:src="@mipmap/cat"
-        android:layout_marginStart="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/ic_test_icon"
         />
 </androidx.constraintlayout.motion.widget.MotionLayout>

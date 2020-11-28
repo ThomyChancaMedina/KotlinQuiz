@@ -22,7 +22,6 @@
         android:id="@+id/btn_result"
         layout="@layout/view_motion_btn_result"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/time"
         app:layout_constraintStart_toEndOf="@+id/time"
         app:layout_constraintTop_toTopOf="parent" />
 

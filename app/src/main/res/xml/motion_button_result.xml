@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <Transition
         app:constraintSetEnd="@+id/end"
         app:constraintSetStart="@+id/start"
@@ -9,34 +8,34 @@
         app:motionInterpolator="easeInOut">
         <KeyFrameSet>
             <KeyCycle
-                app:motionTarget="@+id/image"
-                app:framePosition="10"
                 android:rotationY="22"
+                app:framePosition="10"
+                app:motionTarget="@+id/image"
+                app:waveOffset="1"
                 app:wavePeriod="2"
-                app:waveShape="sin"
-                app:waveOffset="1"/>
+                app:waveShape="sin" />
             <KeyCycle
-                app:motionTarget="@+id/image"
-                app:framePosition="30"
                 android:rotationX="15"
-                app:wavePeriod="1"
-                app:waveShape="sin"
-                app:waveOffset="0"/>
-            <KeyCycle
+                app:framePosition="30"
                 app:motionTarget="@+id/image"
-                app:framePosition="65"
+                app:waveOffset="0"
+                app:wavePeriod="1"
+                app:waveShape="sin" />
+            <KeyCycle
                 android:rotationY="14"
-                app:wavePeriod="1"
-                app:waveShape="sin"
-                app:waveOffset="0"/>
-            <KeyCycle
+                app:framePosition="65"
                 app:motionTarget="@+id/image"
-                app:framePosition="92"
-                android:rotationY="0"
+                app:waveOffset="0"
+                app:wavePeriod="1"
+                app:waveShape="sin" />
+            <KeyCycle
                 android:rotationX="2"
+                android:rotationY="0"
+                app:framePosition="92"
+                app:motionTarget="@+id/image"
+                app:waveOffset="0"
                 app:wavePeriod="0"
-                app:waveShape="sin"
-                app:waveOffset="0"/>
+                app:waveShape="sin" />
         </KeyFrameSet>
         <OnClick
             app:clickAction="toggle"
@@ -46,14 +45,14 @@
     <ConstraintSet android:id="@+id/start">
         <Constraint
             android:id="@+id/image"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="34dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.76"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.45" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </ConstraintSet>
@@ -61,13 +60,13 @@
     <ConstraintSet android:id="@+id/end">
         <Constraint
             android:id="@+id/image"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="34dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.76"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.45" />
+            app:layout_constraintTop_toTopOf="parent" />
     </ConstraintSet>
 </MotionScene>
