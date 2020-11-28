@@ -17,7 +17,7 @@
 
     <include
         android:id="@+id/avatar_circle"
-        layout="@layout/avatar_view"
+        layout="@layout/view_avatar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/quiz"
