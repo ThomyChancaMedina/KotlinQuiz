@@ -17,6 +17,7 @@ class QuestionViewModel(private val getQuestions: GetQuestions) : ScopedViewMode
             return _question
         }
 
+    val data: ArrayList<Question> = ArrayList()
 
     sealed class UiModel {
         class Content(val question: List<Question>) : UiModel()
@@ -24,6 +25,12 @@ class QuestionViewModel(private val getQuestions: GetQuestions) : ScopedViewMode
 
     init {
         initScope()
+        updateQuestion()
+    }
+
+    fun setQuestion(questions: List<Question>) {
+        data.addAll(questions)
+
     }
 
     fun onGetAllQuestions() {
@@ -32,10 +39,23 @@ class QuestionViewModel(private val getQuestions: GetQuestions) : ScopedViewMode
         }
     }
 
+    private var currentIndex = 0
+
+    private val topQuestion
+        get() = data[currentIndex % data.size]
+
+    private val bottomQuestion
+        get() = data[(currentIndex + 1) % data.size]
+
+
     override fun onCleared() {
         destroyScope()
         super.onCleared()
 
+    }
+
+    private fun updateQuestion() {
+        personList.value = TinderCard(topCard, bottomCard)
     }
 
 

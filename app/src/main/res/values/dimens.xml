@@ -12,5 +12,13 @@
     <dimen name="margin_590dp">590dp</dimen>
     <dimen name="margin_300dp">300dp</dimen>
     <dimen name="common_padding_default">16dp</dimen>
+    <dimen name="background_view_size">200dp</dimen>
+    <dimen name="larger_size">32dp</dimen>
+    <dimen name="small_size">8dp</dimen>
+    <dimen name="main_icon_size">100dp</dimen>
+    <dimen name="small_icon_size">40dp</dimen>
+    <dimen name="common_size">16dp</dimen>
+    <dimen name="tiny_size">4dp</dimen>
+    <dimen name="large_size">24dp</dimen>
 
 </resources>
