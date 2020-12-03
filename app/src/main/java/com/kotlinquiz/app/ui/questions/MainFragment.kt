@@ -119,7 +119,6 @@ class MainFragment : Fragment() {
                 buttons.answerOne.text = question[0].answers[0].answer
                 buttons.answerTwo.text = question[0].answers[1].answer
 
-//                pager.addOnPageChangeListener(timeInclude.motionTime as ViewPager.OnPageChangeListener)
                 pager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
                     override fun onPageScrollStateChanged(p0: Int) {
 
@@ -149,8 +148,12 @@ class MainFragment : Fragment() {
                         buttons.answerOne.text = question[p0].answers[0].answer
                         buttons.answerTwo.text = question[p0].answers[1].answer
 
-                        if (p0 == adapterQuiz.count) {
-                            Log.d("TAG", "onPageSelected: thomy:: " + adapterQuiz.count)
+                        if (p0 == adapterQuiz.count-1) {
+
+                            timeInclude.btnResult.image.visibility=View.VISIBLE
+
+                            timeInclude.btnResult.btnMotion.transitionToEnd()
+
 
                         }
                     }

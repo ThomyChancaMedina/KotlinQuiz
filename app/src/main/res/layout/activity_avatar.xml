@@ -18,7 +18,7 @@
 
     <include
         android:id="@+id/avatarImg"
-        layout="@layout/avatar_view"
+        layout="@layout/view_avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

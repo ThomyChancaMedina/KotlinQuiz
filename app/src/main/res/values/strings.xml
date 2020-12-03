@@ -34,4 +34,12 @@
     <string name="dish_name">Question</string>
     <string name="quiz_num">10/0</string>
     <string name="btn_ok">ok</string>
+
+    <string name="title_on_boarding_first_slide">Welcome</string>
+    <string name="description_on_boarding_first_slide">Find your desired car parts, make a request and get them as soon as possible!</string>
+    <string name="title_on_boarding_second_slide">Use VIN code</string>
+    <string name="description_on_boarding_second_slide">Input VIN code of your car to specify car parts</string>
+    <string name="title_on_boarding_third_slide">Make a request</string>
+    <string name="description_on_boarding_third_slide">Request an order with the chosen products from the shopping cart</string>
+    <string name="title_button">Get started</string>
 </resources>
