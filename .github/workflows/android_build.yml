@@ -23,6 +23,10 @@ jobs:
           java-version: 1.8
       - name: Build with Gradle
         run: ./gradlew build
+      
+      - name: Unit tests
+        id: tests
+        run: ./gradlew test
 
       - name: Upload APK
         uses: actions/upload-artifact@v2.2.1
