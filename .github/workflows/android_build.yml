@@ -31,6 +31,18 @@ jobs:
         id: tests
         run: ./gradlew test
 
+      - name: Build Release AAB
+        id: buildRelease
+        run: ./gradlew bundleRelease
+  
+      - name: Upload AAB
+        id: uploadArtifact
+        uses: actions/upload-artifact@v1
+        with:
+            name: app
+            path: app/build/outputs/bundle/release/app-release.aab
+          
+          
       - name: Validate Gradle Wrapper
         uses: gradle/wrapper-validation-action@v1
       
