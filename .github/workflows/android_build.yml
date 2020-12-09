@@ -48,7 +48,7 @@ jobs:
           releaseFile: app/build/outputs/apk/release/app-release-unsigned-signed.apk
           track: beta
           userFraction: 0.33
-          whatsNewDirectory: /distribution/whatsnew
+          whatsNewDirectory: ./whatsnew
           mappingFile: /app/build/outputs/mapping/release/mapping.txt
     
           
