@@ -12,6 +12,9 @@ jobs:
   build:
 
     runs-on: ubuntu-20.04
+    
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 
     steps:
       - name: Checkout latest code
@@ -48,7 +51,6 @@ jobs:
           releaseFile: app/build/outputs/apk/release/app-release-unsigned-signed.apk
           track: beta
           userFraction: 0.33
-          mappingFile: /app/build/outputs/mapping/release/mapping.txt
     
           
           
