@@ -46,9 +46,7 @@ jobs:
       - name: Sign app APK
         uses: Tlaster/android-sign@v1.2.2
         with:
-          releaseDirectory: |
-            app/build/outputs/apk/release
-            app/build/outputs/bundle/release
+          releaseDirectory: app/build/outputs/apk/release
           signingKeyBase64: ${{ secrets.SIGNING_KEY }}
           output: build/release/signed
           alias: ${{ secrets.ALIAS }}
