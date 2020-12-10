@@ -42,31 +42,7 @@ jobs:
         with:
           name: app
           path: app/build/outputs/bundle/release/app-release.aab
-      
-      - name: Sign app APK
-        uses: Tlaster/android-sign@v1.2.2
-        with:
-          releaseDirectory: app/build/outputs/bundle/release
-          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
-          output: build/release/signed
-          alias: ${{ secrets.ALIAS }}
-          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
-        env:
-          BUILD_TOOLS_VERSION: "30.0.2"
-          
-      - name: Upload Android Release to Play Store
-        uses: r0adkll/upload-google-play@v1.0.7
-        with:
-          serviceAccountJson: ${{ secrets.SERVICE_ACCOUNT_JSON }}
-          packageName: com.kotlinquiz.app
-          releaseFile: app/build/outputs/bundle/release/app-release.aab
-          track: beta
-          inAppUpdatePriority: 2
-          userFraction: 0.33
-          whatsNewDirectory: distribution/whatsnew
-          mappingFile: app/build/outputs/mapping/release/mapping.txt
-          
+
           
       - name: Validate Gradle Wrapper
         uses: gradle/wrapper-validation-action@v1
@@ -80,13 +56,19 @@ jobs:
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
           
+          
       - name: Upload Android Release to Play Store
-        uses: r0adkll/upload-google-play@v1
+        uses: r0adkll/upload-google-play@v1.0.7
         with:
-          serviceAccountJsonPlainText: ${{secrets.SERVICE_ACCOUNT_JSON}}
+          serviceAccountJson: ${{ secrets.SERVICE_ACCOUNT_JSON }}
           packageName: com.kotlinquiz.app
           releaseFile: app/build/outputs/bundle/release/app-release.aab
           track: beta
+          inAppUpdatePriority: 2
+          userFraction: 0.33
+          whatsNewDirectory: distribution/whatsnew
+          mappingFile: app/build/outputs/mapping/release/mapping.txt
+          
 
     
           
