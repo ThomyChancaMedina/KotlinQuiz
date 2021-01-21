@@ -9,7 +9,7 @@ plugins {
 
 android {
     compileSdkVersion(30)
-    buildToolsVersion("30.0.2")
+    buildToolsVersion("30.0.3")
 
     defaultConfig {
         applicationId= "com.kotlinquiz.app"
@@ -31,11 +31,6 @@ android {
             )
         }
     }
-//    viewBinding {enabled =true}
-    buildFeatures {
-        dataBinding = true
-    }
-
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -45,6 +40,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        dataBinding = true
         viewBinding = true
     }
 }
@@ -63,13 +59,13 @@ dependencies {
     androidTestImplementation("com.squareup.okhttp3:mockwebserver:4.9.0")
     androidTestImplementation("com.jakewharton.espresso:okhttp3-idling-resource:1.0.0")
     androidTestImplementation("androidx.test.espresso:espresso-contrib:3.3.0")
-    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.9")
+    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2")
     androidTestImplementation("it.xabaras.android.espresso:recyclerview-child-actions:1.0")
     androidTestImplementation("com.android.support.test.espresso:espresso-contrib:3.3.0")
 
     //test
     testImplementation("android.arch.core:core-testing:1.1.1")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.9")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2")
     testImplementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
     testImplementation ("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
     testImplementation("junit:junit:4.13.1")
@@ -77,20 +73,20 @@ dependencies {
 
 
     //Dagger
-    kaptAndroidTest("com.google.dagger:dagger-compiler:2.28")
+    kaptAndroidTest("com.google.dagger:dagger-compiler:2.30.1")
 
 
     annotationProcessor("com.github.bumptech.glide:compiler:4.11.0")
 
 
-    kapt("com.google.dagger:dagger-compiler:2.28")
-    kapt("androidx.room:room-compiler:2.2.5")
+    kapt("com.google.dagger:dagger-compiler:2.30.1")
+    kapt("androidx.room:room-compiler:2.2.6")
     kapt("com.github.bumptech.glide:compiler:4.11.0")
-    kapt("com.google.dagger:dagger-compiler:2.28")
-    kapt("androidx.room:room-runtime:2.2.5")
-    kapt("androidx.room:room-compiler:2.2.5")
+    kapt("com.google.dagger:dagger-compiler:2.30.1")
+    kapt("androidx.room:room-runtime:2.2.6")
+    kapt("androidx.room:room-compiler:2.2.6")
 
-    kaptTest("com.google.dagger:dagger-compiler:2.28")
+    kaptTest("com.google.dagger:dagger-compiler:2.30.1")
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -98,15 +94,15 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.2.0")
     implementation("androidx.constraintlayout:constraintlayout:2.0.4")
     implementation("androidx.core:core-ktx:1.3.2")
-    implementation("com.google.android.material:material:1.3.0-alpha03")
+    implementation("com.google.android.material:material:1.3.0-rc01")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.room:room-runtime:2.2.5")
+    implementation("androidx.room:room-runtime:2.2.6")
     implementation("com.github.bumptech.glide:glide:4.11.0")
-    implementation("com.google.android.gms:play-services-vision:20.1.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
+    implementation("com.google.android.gms:play-services-vision:20.1.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.3.1")
-    implementation("androidx.navigation:navigation-ui-ktx:2.3.1")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.2")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.2")
     implementation("androidx.recyclerview:recyclerview:1.1.0")
 
 
@@ -119,17 +115,17 @@ dependencies {
 
 
     //firebase
-    implementation("com.google.firebase:firebase-analytics:18.0.0")
-    implementation("com.google.firebase:firebase-database-ktx:19.5.1")
+    implementation("com.google.firebase:firebase-analytics:18.0.1")
+    implementation("com.google.firebase:firebase-database-ktx:19.6.0")
 
 
     // kotlinLibs
     implementation("org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2")
 
     //libs
     implementation("com.karumi:dexter:6.2.1")
-    implementation("com.google.dagger:dagger:2.28.1")
+    implementation("com.google.dagger:dagger:2.30.1")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
     implementation("com.squareup.picasso:picasso:2.71828")
 

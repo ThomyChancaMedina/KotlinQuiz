@@ -38,6 +38,16 @@ inline fun <reified T : ViewModel> Fragment.getViewModelF(crossinline factory: (
     return ViewModelProvider(this, vmFactory).get()
 }
 
+@Suppress("UNCHECKED_CAST")
+inline fun <reified T : ViewModel> Fragment.getViewModel(crossinline factory: () -> T): ViewModelProvider.Factory {
+
+    val vmFactory = object : ViewModelProvider.Factory {
+        override fun <U : ViewModel> create(modelClass: Class<U>): U = factory() as U
+    }
+
+    return ViewModelProvider(this, vmFactory).get()
+}
+
 fun ImageView.loadUrl(url: String) {
     Glide.with(context).load(url).into(this)
 }
