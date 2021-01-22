@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.splash.SplashActivity">
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,8 +24,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.avatar.AvatarActivity"/>
-        <activity android:name=".NavHostActivity" />
+        <activity
+            android:name=".ui.avatar.AvatarActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NavHostActivity"
+            android:screenOrientation="portrait" />
 
 
     </application>
