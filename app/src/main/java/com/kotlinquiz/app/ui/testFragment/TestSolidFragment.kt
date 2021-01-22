@@ -2,10 +2,14 @@ package com.kotlinquiz.app.ui.testFragment
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.kotlinquiz.app.R
@@ -30,8 +34,21 @@ class TestSolidFragment : Fragment(), TestSolidAdapter.Interaction {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = container?.bindingInflate(R.layout.fragment_test_solid, false)
 
+        binding = container?.bindingInflate(R.layout.fragment_test_solid, false)
+        activity?.onBackPressedDispatcher?.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    if(shouldInterceptBackPress()){
+                       activity?. moveTaskToBack(true);
+                    }else{
+                        isEnabled = false
+                        activity?.onBackPressed()
+                    }
+
+                }
+            })
         return binding!!.root
     }
 
@@ -94,5 +111,6 @@ class TestSolidFragment : Fragment(), TestSolidAdapter.Interaction {
         adapterQuestion.notifyDataSetChanged()
     }
 
+    fun shouldInterceptBackPress() = true
 
 }
