@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/layout_background"
+        motion:layoutDescription="@xml/animation_starts"
+        tools:context=".ui.winner.WinnerFragment">
+
+        <ImageView
+            android:id="@+id/left_star"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="32dp"
+            motion:srcCompat="@drawable/star_white"
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="89dp" />
+
+        <ImageView
+            android:id="@+id/red_star"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="32dp"
+            motion:srcCompat="@drawable/star_gold"
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="89dp" />
+
+        <ImageView
+            android:id="@+id/right_star"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="32dp"
+            motion:srcCompat="@drawable/star_white"
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="89dp" />
+
+
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    <ImageView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/undraw_winners"
+        app:layout_constraintStart_toStartOf="@+id/motionLayout"
+        app:layout_constraintTop_toTopOf="@+id/motionLayout" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:adSize="BANER"
+        app:adUnitId="ca-app-pub-9805799677002594~7829592207"
+        motion:layout_constraintBottom_toBottomOf="@+id/motionLayout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

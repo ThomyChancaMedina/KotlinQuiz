@@ -21,6 +21,4 @@ abstract class ProjectDatabase : RoomDatabase() {
     abstract fun questionDao(): QuestionDao
     abstract fun testDao(): TestDao
     abstract fun avatarDao(): AvatarDao
-
-
 }

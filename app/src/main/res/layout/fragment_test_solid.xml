@@ -44,7 +44,12 @@
                 android:layout_gravity="center"
                 android:backgroundTint="@android:color/holo_blue_light"
                 android:text="@string/btn_confirmation" />
-
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:adSize="BANER"
+                app:adUnitId="ca-app-pub-9805799677002594~7829592207" />
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler"
                 android:layout_width="match_parent"
@@ -55,6 +60,7 @@
 
 
         </LinearLayout>
+
 
     </FrameLayout>
 </layout>
