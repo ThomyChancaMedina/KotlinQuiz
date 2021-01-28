@@ -29,20 +29,16 @@
             android:defaultValue="-1"
             app:argType="integer" />
         <action
-            android:id="@+id/action_mainFragment_to_cardQuestionActivity"
-            app:destination="@id/cardQuestionActivity" />
+            android:id="@+id/action_mainFragment_to_winnerFragment"
+            app:destination="@id/winnerFragment" />
+
 
     </fragment>
-
-    <activity
-        android:id="@+id/cardQuestionActivity"
-        android:name="com.kotlinquiz.app.ui.questions.CardQuestionActivity"
-        android:label="CardQuestionActivity">
-        <argument
-            android:name="id"
-            android:defaultValue="-1"
-            app:argType="integer" />
-    </activity>
+    <fragment
+        android:id="@+id/winnerFragment"
+        android:name="com.kotlinquiz.app.ui.winner.WinnerFragment"
+        android:label="fragment_winner"
+        tools:layout="@layout/fragment_winner" />
 
 
 </navigation>

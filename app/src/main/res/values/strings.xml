@@ -2,11 +2,6 @@
     <string name="app_name">Kotlin Quiz</string>
 
     <string name="title">Cuestionario de Principios SOLID</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="ingredients">Tomatos, Cheese, Lettuce,\n Chips, Tacos, Dessing</string>
-    <string name="price">₹180</string>
-    <string name="calories">200 Kcal</string>
-
 
     <string-array name="Answers">
         <item>yes</item>
@@ -28,18 +23,19 @@
         <item>yes</item>
     </string-array>
 
-
+    <string name="message">Estas seguro que quieres salir de Preguntas Kotlin</string>
     <string name="btn_confirmation">Check</string>
     <string name="todo">TODO</string>
     <string name="dish_name">Question</string>
     <string name="quiz_num">10/0</string>
     <string name="btn_ok">ok</string>
 
+    <string name="yes">SI</string>
+    <string name="no">NO</string>
+
     <string name="title_on_boarding_first_slide">Welcome</string>
-    <string name="description_on_boarding_first_slide">Find your desired car parts, make a request and get them as soon as possible!</string>
-    <string name="title_on_boarding_second_slide">Use VIN code</string>
-    <string name="description_on_boarding_second_slide">Input VIN code of your car to specify car parts</string>
-    <string name="title_on_boarding_third_slide">Make a request</string>
-    <string name="description_on_boarding_third_slide">Request an order with the chosen products from the shopping cart</string>
     <string name="title_button">Get started</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
