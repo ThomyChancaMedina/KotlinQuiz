@@ -15,13 +15,12 @@ import androidx.navigation.findNavController
 import androidx.viewpager.widget.ViewPager
 import com.architectcoders.domain.question.Question
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import com.kotlinquiz.app.R
 import com.kotlinquiz.app.databinding.FragmentMainBinding
 import com.kotlinquiz.app.ui.common.appF
 import com.kotlinquiz.app.ui.common.getViewModelF
-import com.kotlinquiz.app.ui.common.startActivityF
-import com.kotlinquiz.app.ui.winner.WinnerFragment
 
 import com.thomy.library.CountDownTime
 
@@ -41,6 +40,7 @@ class MainFragment : Fragment() {
 
     private var NEXT_ITEM = 0
 
+    private lateinit var mInterstitialAd:InterstitialAd
 
     private val viewModel: QuestionViewModel by lazy { getViewModelF { component.questionViewModel } }
 
@@ -50,11 +50,28 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentMainBinding.inflate(inflater, container, false)
+        //publish
+
         MobileAds.initialize(
-            appF
+            context
         )
         val adRequest= AdRequest.Builder().build()
         binding.adView.loadAd(adRequest)
+
+
+
+
+        mInterstitialAd = InterstitialAd(context)
+        mInterstitialAd.adUnitId="ca-app-pub-3940256099942544/6300978111"
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
+
+        if (mInterstitialAd.isLoaded){
+            mInterstitialAd.show()
+        }
+
+
+        //end publish
+
         activity?.onBackPressedDispatcher?.addCallback(
             viewLifecycleOwner,
             object : OnBackPressedCallback(true) {
@@ -88,6 +105,11 @@ class MainFragment : Fragment() {
         return binding.root
     }
 
+    fun displayInterstitial() {
+        if (mInterstitialAd.isLoaded) {
+            mInterstitialAd.show()
+        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

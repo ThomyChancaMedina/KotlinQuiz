@@ -11,6 +11,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.InterstitialAd
 import com.kotlinquiz.app.R
 import com.kotlinquiz.app.databinding.FragmentTestSolidBinding
 import com.kotlinquiz.app.ui.common.*
@@ -27,6 +28,8 @@ class TestSolidFragment : Fragment(), TestSolidAdapter.Interaction {
 
     private lateinit var component: TestFragmentComponent
 
+    private lateinit var mInterstitialAd:InterstitialAd
+
     private val viewModel:TestSolidViewModel by lazy { getViewModelF { component.testSolidViewModel } }
 
     override fun onCreateView(
@@ -35,11 +38,25 @@ class TestSolidFragment : Fragment(), TestSolidAdapter.Interaction {
     ): View {
 
         binding = container!!.bindingInflate(R.layout.fragment_test_solid, false)
+
+        //publish
         MobileAds.initialize(
-            appF
+            context
         )
         val adRequest= AdRequest.Builder().build()
         binding.adView.loadAd(adRequest)
+
+
+        mInterstitialAd = InterstitialAd(context)
+        mInterstitialAd.adUnitId="ca-app-pub-3940256099942544/6300978111"
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
+
+        if (mInterstitialAd.isLoaded){
+            mInterstitialAd.show()
+        }
+
+        //end publish
+
 
         activity?.onBackPressedDispatcher?.addCallback(
             viewLifecycleOwner,
